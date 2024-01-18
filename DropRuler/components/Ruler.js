@@ -1,6 +1,8 @@
 import react from "react";
 import { View } from "react-native";
 import Constants from "../Constants";
+import { Image } from "expo-image";
+
 
 
 export default function Ruler({ position }) {
@@ -8,13 +10,19 @@ export default function Ruler({ position }) {
     return (
         <View
             style={{
-                width: Constants.CELL_SIZE,
-                height: Constants.CELL_SIZE * 5,
+                width: '8%',
+                aspectRatio: '76 / 402',
                 backgroundColor: "yellow",
                 position: "absolute",
                 left: position[0],
                 top: position[1],
-            }}
-        />
+            }}>
+            <Image
+                style={{
+                    flex: 1,
+                    width: '100%',
+                }}
+                source={require("../assets/Ruler.png")} />
+        </View>
     )
 } 
